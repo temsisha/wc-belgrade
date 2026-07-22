@@ -4713,11 +4713,6 @@ a:focus-visible {
     display: none !important;
   }
 
-  /*
-   * Leaflet zoom je isključen u JSX-u,
-   * ali ovo dodatno sprečava prikaz ako
-   * negde ostane uključen.
-   */
   .app--phase-one .leaflet-control-zoom {
     display: none !important;
   }
