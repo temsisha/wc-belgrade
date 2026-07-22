@@ -1,0 +1,36 @@
+[
+  {
+    "id": "kalenic-market-candidate",
+    "name": "Pijaca Kalenić",
+    "placeType": "market",
+    "address": "Maksima Gorkog 2B, Beograd",
+    "openingHours": "06:00-19:00",
+    "verificationStatus": "toilet_not_confirmed",
+    "questions": [
+      "Da li postoji toalet za posetioce?",
+      "Da li se korišćenje plaća?",
+      "Gde se nalazi ulaz?",
+      "Da li je pristupačan osobama sa invaliditetom?"
+    ],
+    "sourceName": "JKP Beogradske pijace",
+    "sourceUrl": "https://www.bgpijace.rs/?p=266"
+  },
+  {
+  "id": "zeleznicka-stanica-novi-beograd-candidate",
+  "name": "Železnička stanica Novi Beograd",
+  "placeType": "train_station",
+  "address": "Antifašističke borbe bb, Blok 42",
+  "latitude": 44.80722,
+  "longitude": 20.41833,
+  "verificationStatus": "toilet_status_requires_new_check",
+  "lastKnownStatus": "Godine 2024. označeni toalet nije bio dostupan putnicima.",
+  "questions": [
+    "Da li je toalet sada otvoren?",
+    "Da li se korišćenje plaća?",
+    "Koje je radno vreme?",
+    "Da li je pristupačan osobama sa invaliditetom?"
+  ],
+  "sourceName": "N1",
+  "sourceUrl": "https://n1info.rs/vesti/moze-li-se-u-toalet-na-zeleznickoj-stanici-novi-beograd-da-ali-samo-na-tabli/"
+}
+]

@@ -1,0 +1,986 @@
+[
+{
+"id": "zeleni-venac-terminus",
+"name": "Javni toalet Zeleni venac",
+"officialName": "Zeleni venac – terminus",
+"placeType": "public_toilet",
+"address": "Zeleni venac, autobuski terminus, Beograd",
+"latitude": 44.8134,
+"longitude": 20.4528,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["07:00", "22:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["07:00", "23:00"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "narodno-pozoriste",
+"name": "Javni toalet Narodno pozorište",
+"officialName": "Narodno pozorište",
+"placeType": "public_toilet",
+"address": "Trg Republike, kod Narodnog pozorišta, Beograd",
+"latitude": 44.8167,
+"longitude": 20.4606,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["07:00", "22:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["07:00", "23:00"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "palata-albanija",
+"name": "Javni toalet Palata Albanija",
+"officialName": "Palata Albanija",
+"placeType": "public_toilet",
+"address": "Knez Mihailova 4–6, Beograd",
+"latitude": 44.815058,
+"longitude": 20.460132,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["07:00", "22:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["07:00", "23:00"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "prolaz-nusiceva-dragstor",
+"name": "Javni toalet Nušićev prolaz",
+"officialName": "Prolaz Nušićeva – Dragstor",
+"placeType": "public_toilet",
+"address": "Nušićev prolaz, Beograd",
+"latitude": 44.8144,
+"longitude": 20.4627,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["07:00", "22:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["07:00", "23:00"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "veliki-kalemegdan",
+"name": "Javni toalet Veliki Kalemegdan",
+"officialName": "Veliki Kalemegdan",
+"placeType": "public_toilet",
+"address": "Veliki Kalemegdan, Beograd",
+"latitude": 44.8206,
+"longitude": 20.451,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["07:00", "22:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["07:00", "23:00"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "mali-kalemegdan",
+"name": "Javni toalet Mali Kalemegdan",
+"officialName": "Mali Kalemegdan",
+"placeType": "public_toilet",
+"address": "Mali Kalemegdan, Beograd",
+"latitude": 44.823419,
+"longitude": 20.454172,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["07:00", "22:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["07:00", "23:00"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "cvetni-trg",
+"name": "Javni toalet Cvetni trg",
+"officialName": "Cvetni trg",
+"placeType": "public_toilet",
+"address": "Cvetni trg, Beograd",
+"latitude": 44.805917,
+"longitude": 20.465056,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["07:00", "22:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["07:00", "23:00"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "avijaticarski-trg",
+"name": "Javni toalet Avijatičarski trg",
+"officialName": "Avijatičarski trg",
+"placeType": "public_toilet",
+"address": "Avijatičarski trg, Zemun",
+"latitude": 44.841458,
+"longitude": 20.41325,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["07:00", "22:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["07:00", "23:00"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "akademski-park",
+"name": "Javni toalet Akademski park",
+"officialName": "Akademski park",
+"placeType": "public_toilet",
+"address": "Studentski trg, Akademski park, Beograd",
+"latitude": 44.82022,
+"longitude": 20.45831,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["07:00", "22:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["07:00", "23:00"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "hram-svetog-save",
+"name": "Javni toalet kod Hrama Svetog Save",
+"officialName": "Hram",
+"placeType": "public_toilet",
+"address": "Svetosavski plato, Beograd",
+"latitude": 44.7983,
+"longitude": 20.4683,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["07:00", "22:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["07:00", "23:00"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "tasmajdan",
+"name": "Javni toalet Tašmajdan",
+"officialName": "Tašmajdan",
+"placeType": "public_toilet",
+"address": "Park Tašmajdan, Beograd",
+"latitude": 44.809015,
+"longitude": 20.47107,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["09:00", "19:30"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "park-manjez",
+"name": "Javni toalet Park Manjež",
+"officialName": "Park Manjež",
+"placeType": "public_toilet",
+"address": "Park Manjež, Beograd",
+"latitude": 44.804721,
+"longitude": 20.463664,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["09:00", "19:30"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "cuburski-park",
+"name": "Javni toalet Čuburski park",
+"officialName": "Čuburski park",
+"placeType": "public_toilet",
+"address": "Čuburski park, Beograd",
+"latitude": 44.79694,
+"longitude": 20.47556,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["09:00", "19:30"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "usce-podzemni-prolaz",
+"name": "Javni toalet Ušće",
+"officialName": "Poslovni centar Ušće – podzemni prolaz",
+"placeType": "public_toilet",
+"address": "Podzemni prolaz kod Ušća, Novi Beograd",
+"latitude": 44.8158,
+"longitude": 20.436,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["09:00", "19:30"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "autokomanda-ljutice-bogdana",
+"name": "Javni toalet Autokomanda",
+"officialName": "Ljutice Bogdana – Autokomanda",
+"placeType": "public_toilet",
+"address": "Ljutice Bogdana, Autokomanda, Beograd",
+"latitude": 44.790278,
+"longitude": 20.468056,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["09:00", "19:30"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "crveni-krst",
+"name": "Javni toalet Crveni krst",
+"officialName": "Crveni krst",
+"placeType": "public_toilet",
+"address": "Trg Crveni krst, Beograd",
+"latitude": 44.797848,
+"longitude": 20.486573,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "karadjordjev-park",
+"name": "Javni toalet Karađorđev park",
+"officialName": "Karađorđev park",
+"placeType": "public_toilet",
+"address": "Karađorđev park, Beograd",
+"latitude": 44.796523,
+"longitude": 20.465641,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "sahat-kula",
+"name": "Javni toalet Sahat kula",
+"officialName": "Sahat kula",
+"placeType": "public_toilet",
+"address": "Beogradska tvrđava, kod Sahat kule",
+"latitude": 44.8232,
+"longitude": 20.4504,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+},
+"summer": {
+"default": ["09:00", "16:30"],
+"closedDays": []
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "vrtlarska-zemun",
+"name": "Javni toalet Vrtlarska",
+"officialName": "Vrtlarska",
+"placeType": "public_toilet",
+"address": "Vrtlarska, Gradski park, Zemun",
+"latitude": 44.8429,
+"longitude": 20.4148,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["09:00", "16:30"],
+"closedDays": ["sunday"]
+},
+"summer": {
+"default": ["09:00", "16:30"],
+"closedDays": ["sunday"]
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+"id": "groblje-oslobodilaca-beograda",
+"name": "Javni toalet Groblje oslobodilaca Beograda",
+"officialName": "Groblje oslobodilaca Beograda",
+"placeType": "public_toilet",
+"address": "Ruzveltova, Groblje oslobodilaca Beograda",
+"latitude": 44.810988,
+"longitude": 20.485028,
+"coordinateAccuracy": "approximate",
+"accessType": "public_free",
+"fee": false,
+"openingHours": {
+"winter": {
+"default": ["09:00", "16:30"],
+"closedDays": ["sunday"]
+},
+"summer": {
+"default": ["09:00", "16:30"],
+"closedDays": ["sunday"]
+}
+},
+"verificationStatus": "official_source",
+"lastVerifiedAt": null,
+"sourceCheckedAt": "2026-07-21",
+"sourceName": "JKP Zelenilo-Beograd",
+"sourceUrl": "https://www.zelenilo.rs/delatnosti/odrzavanje-zelenih-povrsina/sanitarni-objekti"
+},
+{
+  "id": "ada-mall",
+  "name": "WC Ada Mall",
+  "officialName": "Ada Mall",
+  "placeType": "shopping_mall",
+  "address": "Radnička 9, Beograd",
+  "latitude": 44.786991,
+  "longitude": 20.418545,
+  "coordinateAccuracy": "building",
+  "accessType": "visitors",
+  "fee": false,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["10:00", "22:00"],
+      "tuesday": ["10:00", "22:00"],
+      "wednesday": ["10:00", "22:00"],
+      "thursday": ["10:00", "22:00"],
+      "friday": ["10:00", "22:00"],
+      "saturday": ["10:00", "22:00"],
+      "sunday": ["10:00", "22:00"]
+    }
+  },
+  "locationDescription": "Toaleti su označeni na mapama spratova centra.",
+  "verificationStatus": "official_map",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "Ada Mall",
+  "sourceUrl": "https://www.adamall.com/kontakt/"
+},
+{
+  "id": "nis-petrol-cukarica",
+  "name": "Toalet NIS Petrol Čukarica",
+  "officialName": "Čukarica",
+  "placeType": "gas_station",
+  "address": "Čukarica, Beograd",
+  "latitude": 44.786217,
+  "longitude": 20.415366,
+  "coordinateAccuracy": "official_gps",
+  "accessType": "ask_staff",
+  "fee": null,
+  "keyRequired": null,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["07:00", "19:00"],
+      "tuesday": ["07:00", "19:00"],
+      "wednesday": ["07:00", "19:00"],
+      "thursday": ["07:00", "19:00"],
+      "friday": ["07:00", "19:00"],
+      "saturday": ["07:00", "19:00"],
+      "sunday": ["07:00", "19:00"]
+    }
+  },
+  "locationDescription": "Toalet se nalazi u sklopu benzinske stanice. Uslove korišćenja treba potvrditi sa osobljem.",
+  "verificationStatus": "official_service_list",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "NIS Petrol i Gazprom",
+  "sourceUrl": "https://www.nisgazprom.rs/sr/benzinske-stanice/mapa/"
+},{
+  "id": "usce-shopping-center",
+  "name": "WC Ušće Shopping Center",
+  "officialName": "UŠĆE Shopping Center",
+  "placeType": "shopping_mall",
+  "address": "Bulevar Mihaila Pupina 4, Novi Beograd",
+  "latitude": 44.81611944,
+  "longitude": 20.43809444,
+  "coordinateAccuracy": "building",
+  "accessType": "visitors",
+  "fee": null,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["10:00", "22:00"],
+      "tuesday": ["10:00", "22:00"],
+      "wednesday": ["10:00", "22:00"],
+      "thursday": ["10:00", "22:00"],
+      "friday": ["10:00", "22:00"],
+      "saturday": ["10:00", "22:00"],
+      "sunday": ["10:00", "22:00"]
+    }
+  },
+  "locationDescription": "Toalet je u sklopu tržnog centra. Tačan sprat i pozicija još nisu potvrđeni.",
+  "verificationStatus": "official_venue_toilet_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "UŠĆE Shopping Center",
+  "sourceUrl": "https://usceshoppingcenter.rs/"
+},
+{
+  "id": "big-fashion-beograd",
+  "name": "WC BIG Fashion Beograd",
+  "officialName": "BIG Fashion Beograd",
+  "placeType": "shopping_mall",
+  "address": "Višnjička 84, Beograd",
+  "latitude": 44.8167884,
+  "longitude": 20.5075651,
+  "coordinateAccuracy": "building",
+  "accessType": "visitors",
+  "fee": null,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["10:00", "22:00"],
+      "tuesday": ["10:00", "22:00"],
+      "wednesday": ["10:00", "22:00"],
+      "thursday": ["10:00", "22:00"],
+      "friday": ["10:00", "22:00"],
+      "saturday": ["10:00", "22:00"],
+      "sunday": ["10:00", "22:00"]
+    }
+  },
+  "locationDescription": "Toalet je u sklopu tržnog centra. Tačan sprat i pozicija još nisu potvrđeni.",
+  "verificationStatus": "official_venue_toilet_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "BIG Fashion Beograd",
+  "sourceUrl": "https://www.bigcenters.rs/beograd/mapa-objekta/"
+},
+{
+  "id": "big-rakovica",
+  "name": "WC BIG Rakovica",
+  "officialName": "BIG Rakovica",
+  "placeType": "shopping_mall",
+  "address": "Patrijarha Dimitrija 14, Beograd",
+  "latitude": 44.728653,
+  "longitude": 20.457942,
+  "coordinateAccuracy": "building",
+  "accessType": "visitors",
+  "fee": null,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["10:00", "22:00"],
+      "tuesday": ["10:00", "22:00"],
+      "wednesday": ["10:00", "22:00"],
+      "thursday": ["10:00", "22:00"],
+      "friday": ["10:00", "22:00"],
+      "saturday": ["10:00", "22:00"],
+      "sunday": ["10:00", "22:00"]
+    }
+  },
+  "locationDescription": "Toalet je u sklopu tržnog centra. Tačan položaj unutar objekta još nije potvrđen.",
+  "verificationStatus": "official_venue_toilet_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "BIG Rakovica",
+  "sourceUrl": "https://www.bigcenters.rs/rakovica/mapa-objekta/"
+},
+{
+  "id": "delta-city",
+  "name": "WC Delta City",
+  "officialName": "Delta City",
+  "placeType": "shopping_mall",
+  "address": "Jurija Gagarina 16, Novi Beograd",
+  "latitude": 44.8053915,
+  "longitude": 20.4052617,
+  "coordinateAccuracy": "building",
+  "accessType": "visitors",
+  "fee": null,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["10:00", "22:00"],
+      "tuesday": ["10:00", "22:00"],
+      "wednesday": ["10:00", "22:00"],
+      "thursday": ["10:00", "22:00"],
+      "friday": ["10:00", "22:00"],
+      "saturday": ["10:00", "22:00"],
+      "sunday": ["10:00", "22:00"]
+    }
+  },
+  "locationDescription": "Toalet je u sklopu tržnog centra. Tačan sprat i pozicija još nisu potvrđeni.",
+  "verificationStatus": "official_venue_toilet_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "Delta City",
+  "sourceUrl": "https://www.deltacity.rs/mapa-centra/"
+},
+{
+  "id": "galerija-beograd",
+  "name": "WC Galerija Beograd",
+  "officialName": "Galerija Beograd",
+  "placeType": "shopping_mall",
+  "address": "Bulevar Vudroa Vilsona 14, Beograd",
+  "latitude": 44.80299,
+  "longitude": 20.44577,
+  "coordinateAccuracy": "building",
+  "accessType": "visitors",
+  "fee": null,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["10:00", "22:00"],
+      "tuesday": ["10:00", "22:00"],
+      "wednesday": ["10:00", "22:00"],
+      "thursday": ["10:00", "22:00"],
+      "friday": ["10:00", "22:00"],
+      "saturday": ["10:00", "22:00"],
+      "sunday": ["10:00", "22:00"]
+    }
+  },
+  "locationDescription": "Toalet je u sklopu centra. Galerija ima interaktivnu mapu, ali tačan položaj toaleta još nije unet.",
+  "verificationStatus": "official_venue_toilet_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "Galerija Beograd",
+  "sourceUrl": "https://www.galerijabelgrade.com/sr/map"
+},{
+  "id": "beo-shopping-center",
+  "name": "WC BEO Shopping Center",
+  "officialName": "BEO Shopping Center",
+  "placeType": "shopping_mall",
+  "address": "Vojislava Ilića 141, Beograd",
+  "latitude": 44.78646947802958,
+  "longitude": 20.501865847355596,
+  "coordinateAccuracy": "building",
+  "accessType": "visitors",
+  "fee": null,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["10:00", "22:00"],
+      "tuesday": ["10:00", "22:00"],
+      "wednesday": ["10:00", "22:00"],
+      "thursday": ["10:00", "22:00"],
+      "friday": ["10:00", "22:00"],
+      "saturday": ["10:00", "22:00"],
+      "sunday": ["10:00", "22:00"]
+    }
+  },
+  "locationDescription": "Toalet postoji u sklopu centra. Tačan sprat i položaj još nisu uneti.",
+  "verificationStatus": "third_party_restroom_confirmed",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "BEO Shopping Center",
+  "sourceUrl": "https://beoshoppingcenter.rs/kontakt/"
+},
+{
+  "id": "rajiceva-shopping-center",
+  "name": "WC Rajićeva Shopping Center",
+  "officialName": "Rajićeva Shopping Center",
+  "placeType": "shopping_mall",
+  "address": "Kneza Mihaila 54, Beograd",
+  "latitude": 44.8201003,
+  "longitude": 20.4547124,
+  "coordinateAccuracy": "building",
+  "accessType": "visitors",
+  "fee": null,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["10:00", "22:00"],
+      "tuesday": ["10:00", "22:00"],
+      "wednesday": ["10:00", "22:00"],
+      "thursday": ["10:00", "22:00"],
+      "friday": ["10:00", "22:00"],
+      "saturday": ["10:00", "22:00"],
+      "sunday": ["10:00", "22:00"]
+    }
+  },
+  "locationDescription": "Toalet je u sklopu centra. Tačan nivo i položaj treba proveriti na interaktivnoj mapi ili info-pultu.",
+  "verificationStatus": "official_venue_toilet_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "Rajićeva Shopping Center",
+  "sourceUrl": "https://www.rajicevashoppingcenter.rs/interaktivne-mape/"
+},
+{
+  "id": "stadion-shopping-center",
+  "name": "WC Stadion Shopping Center",
+  "officialName": "Stadion Shopping Center",
+  "placeType": "shopping_mall",
+  "address": "Zaplanjska 32, Beograd",
+  "latitude": 44.77523594852861,
+  "longitude": 20.49014840219512,
+  "coordinateAccuracy": "building",
+  "accessType": "visitors",
+  "fee": null,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["10:00", "22:00"],
+      "tuesday": ["10:00", "22:00"],
+      "wednesday": ["10:00", "22:00"],
+      "thursday": ["10:00", "22:00"],
+      "friday": ["10:00", "22:00"],
+      "saturday": ["10:00", "22:00"],
+      "sunday": ["10:00", "22:00"]
+    }
+  },
+  "locationDescription": "Toalet je u sklopu centra. Tačan nivo i uslovi korišćenja još nisu potvrđeni.",
+  "verificationStatus": "official_venue_toilet_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "Stadion Shopping Center",
+  "sourceUrl": "https://stadionshoppingcenter.rs/"
+},
+{
+  "id": "mercator-centar-beograd",
+  "name": "WC Mercator Centar Beograd",
+  "officialName": "Mercator Centar Beograd",
+  "placeType": "shopping_mall",
+  "address": "Bulevar umetnosti 4, Novi Beograd",
+  "latitude": 44.820606,
+  "longitude": 20.41426,
+  "coordinateAccuracy": "building",
+  "accessType": "visitors",
+  "fee": null,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["09:00", "22:00"],
+      "tuesday": ["09:00", "22:00"],
+      "wednesday": ["09:00", "22:00"],
+      "thursday": ["09:00", "22:00"],
+      "friday": ["09:00", "22:00"],
+      "saturday": ["09:00", "22:00"],
+      "sunday": ["09:00", "22:00"]
+    }
+  },
+  "openingHoursNote": "Na različitim delovima zvaničnog sajta pojavljuju se vremena 08:00 i 09:00. Za sada koristimo 09:00-22:00.",
+  "locationDescription": "Toalet je u sklopu centra. Tačan sprat i položaj još nisu potvrđeni.",
+  "verificationStatus": "official_venue_toilet_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "Mercator Centar Beograd",
+  "sourceUrl": "https://mercatorcentar.rs/"
+},
+{
+  "id": "bas-novi-beograd",
+  "name": "Toalet Beogradska autobuska stanica",
+  "officialName": "Beogradska autobuska stanica",
+  "placeType": "bus_station",
+  "address": "Antifašističke borbe 46, Novi Beograd",
+  "latitude": 44.8078,
+  "longitude": 20.416,
+  "coordinateAccuracy": "approximate_building",
+  "accessType": "passengers_and_visitors",
+  "fee": null,
+  "keyRequired": null,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": null,
+  "openingHoursNote": "Autobuska stanica radi 24 časa. Posebno radno vreme toaleta nije potvrđeno.",
+  "locationDescription": "Toalet je u sklopu autobuske stanice. Tačan položaj unutar objekta i uslovi korišćenja još nisu potvrđeni.",
+  "verificationStatus": "toilet_reported_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "Beogradska autobuska stanica",
+  "sourceUrl": "https://www.bas.rs/sr/garderoba"
+},
+{
+  "id": "beograd-centar-prokop",
+  "name": "Toalet Železnička stanica Beograd Centar",
+  "officialName": "Železnička stanica Beograd Centar – Prokop",
+  "placeType": "train_station",
+  "address": "Prokupačka bb, Beograd",
+  "latitude": 44.79343,
+  "longitude": 20.453616,
+  "coordinateAccuracy": "station_building",
+  "accessType": "passengers_and_visitors",
+  "fee": null,
+  "keyRequired": null,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": null,
+  "openingHoursNote": "Stanica radi neprekidno, ali dostupnost toaleta tokom celog dana nije potvrđena.",
+  "locationDescription": "Toalet se nalazi u staničnoj zgradi. Cena, pristup i trenutno stanje nisu skoro provereni.",
+  "verificationStatus": "toilet_confirmed_current_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "Železnička stanica Beograd Centar",
+  "sourceUrl": "https://srbijavoz.rs/prodajna-mesta/"
+},
+{
+  "id": "src-11-april",
+  "name": "Toalet SRC 11. april",
+  "officialName": "Sportsko-rekreativni centar 11. april",
+  "placeType": "sports_center",
+  "address": "Autoput za Zagreb 2, Novi Beograd",
+  "latitude": 44.8259,
+  "longitude": 20.3943,
+  "coordinateAccuracy": "approximate_building",
+  "accessType": "ticket_or_service_required",
+  "fee": null,
+  "keyRequired": false,
+  "codeRequired": false,
+  "wheelchairAccessible": null,
+  "babyChangingTable": null,
+  "openingHours": {
+    "weekly": {
+      "monday": ["06:00", "22:00"],
+      "tuesday": ["06:00", "22:00"],
+      "wednesday": ["06:00", "22:00"],
+      "thursday": ["06:00", "22:00"],
+      "friday": ["06:00", "22:00"],
+      "saturday": ["07:00", "23:00"],
+      "sunday": ["07:00", "23:00"]
+    }
+  },
+  "openingHoursNote": "Pojedinačni sadržaji i bazeni mogu imati kraće termine od radnog vremena celog objekta.",
+  "locationDescription": "Toalet je u sklopu sportskog centra i svlačionica. Verovatno je potrebna karta ili korišćenje neke usluge centra.",
+  "verificationStatus": "venue_facility_confirmed_access_details_pending",
+  "lastVerifiedAt": null,
+  "sourceCheckedAt": "2026-07-22",
+  "sourceName": "Sportski centar Novi Beograd",
+  "sourceUrl": "https://www.scnovibeograd.rs/11april/"
+}
+]
