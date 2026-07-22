@@ -4608,3 +4608,117 @@ a:focus-visible {
     right: 14px;
   }
 }
+
+/* Custom mobile map controls */
+
+.mobile-map-controls {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mobile-map-controls {
+    position: absolute;
+    z-index: 1450;
+    top: 86px;
+    right: 14px;
+    left: 14px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    pointer-events: none;
+  }
+
+  .mobile-map-controls__zoom,
+  .mobile-map-controls__location {
+    pointer-events: auto;
+  }
+
+  .mobile-map-controls__zoom {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+      0 12px 28px rgba(15, 42, 45, 0.16);
+
+    backdrop-filter: blur(16px);
+  }
+
+  .mobile-map-controls__zoom button {
+    display: flex;
+    width: 44px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    padding: 0;
+
+    background: transparent;
+    color: #173334;
+
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1;
+
+    cursor: pointer;
+  }
+
+  .mobile-map-controls__zoom button:first-child {
+    border-bottom:
+      1px solid rgba(16, 55, 56, 0.1);
+  }
+
+  .mobile-map-controls__zoom button:active {
+    background: #edf5f3;
+  }
+
+  .mobile-map-controls__location {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    padding: 0;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    box-shadow:
+      0 12px 28px rgba(15, 42, 45, 0.16);
+
+    color: #1769e8;
+
+    backdrop-filter: blur(16px);
+    cursor: pointer;
+  }
+
+  .mobile-map-controls__location:active {
+    transform: scale(0.96);
+  }
+
+  /*
+   * Staro dugme više ne koristimo.
+   */
+  .app--phase-one .map-location-button {
+    display: none !important;
+  }
+
+  /*
+   * Leaflet zoom je isključen u JSX-u,
+   * ali ovo dodatno sprečava prikaz ako
+   * negde ostane uključen.
+   */
+  .app--phase-one .leaflet-control-zoom {
+    display: none !important;
+  }
+}

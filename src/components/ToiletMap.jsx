@@ -342,12 +342,36 @@ export default function ToiletMap({
     });
   }
 
+  function zoomInMap() {
+    const map = mapRef.current;
+
+    if (!map) {
+      return;
+    }
+
+    map.zoomIn();
+  }
+
+  function zoomOutMap() {
+    const map = mapRef.current;
+
+    if (!map) {
+      return;
+    }
+
+    map.zoomOut();
+  }
+
   return (
     <div className="toilet-map-wrapper">
       <MapContainer
         center={[userLocation.latitude, userLocation.longitude]}
         zoom={16}
-        style={{ height: "100%", width: "100%" }}
+        zoomControl={false}
+        style={{
+          height: "100%",
+          width: "100%",
+        }}
       >
         <TileLayer
           attribution="&copy; OpenStreetMap contributors &copy; CARTO"
@@ -531,18 +555,40 @@ export default function ToiletMap({
         </MarkerClusterGroup>
       </MapContainer>
 
-      {!route?.positions?.length && (
-        <button
-          type="button"
-          className="map-location-button"
-          onClick={focusUserLocation}
-          disabled={!userLocation}
-          aria-label="Prikaži moju lokaciju"
-          title="Prikaži moju lokaciju"
-        >
-          <LocateFixed size={21} strokeWidth={2.4} aria-hidden="true" />
-        </button>
-      )}
+      <div className="mobile-map-controls">
+        <div className="mobile-map-controls__zoom">
+          <button
+            type="button"
+            onClick={zoomInMap}
+            aria-label="Uvećaj mapu"
+            title="Uvećaj mapu"
+          >
+            +
+          </button>
+
+          <button
+            type="button"
+            onClick={zoomOutMap}
+            aria-label="Umanji mapu"
+            title="Umanji mapu"
+          >
+            −
+          </button>
+        </div>
+
+        {!route?.positions?.length && (
+          <button
+            type="button"
+            className="mobile-map-controls__location"
+            onClick={focusUserLocation}
+            disabled={!userLocation}
+            aria-label="Prikaži moju lokaciju"
+            title="Prikaži moju lokaciju"
+          >
+            <LocateFixed size={21} strokeWidth={2.4} aria-hidden="true" />
+          </button>
+        )}
+      </div>
     </div>
   );
 }
