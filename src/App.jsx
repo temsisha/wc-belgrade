@@ -1,4 +1,12 @@
 import { useEffect, useState } from "react";
+import {
+  ChevronDown,
+  Footprints,
+  MapPin,
+  Navigation,
+  SlidersHorizontal,
+  X,
+} from "lucide-react";
 
 import toilets from "./data/toilets.json";
 
@@ -8,9 +16,7 @@ import Filters from "./components/Filters";
 import LocationIntro from "./components/LocationIntro";
 
 import { getToiletOpeningStatus } from "./utils/openingHours";
-
 import { calculateDistanceKm, formatDistance } from "./utils/distance";
-
 import {
   formatRouteDistance,
   formatRouteDuration,
@@ -21,31 +27,18 @@ import "./index.css";
 
 export default function App() {
   const [showOnlyOpen, setShowOnlyOpen] = useState(false);
-
   const [showOnlyFree, setShowOnlyFree] = useState(false);
-
   const [selectedPlaceType, setSelectedPlaceType] = useState("all");
-
   const [userLocation, setUserLocation] = useState(null);
-
   const [locationStatus, setLocationStatus] = useState("idle");
-
   const [locationError, setLocationError] = useState("");
-
   const [route, setRoute] = useState(null);
-
   const [routeStatus, setRouteStatus] = useState("idle");
-
   const [routeError, setRouteError] = useState("");
-
   const [isMobileSheetOpen, setIsMobileSheetOpen] = useState(false);
-
   const [selectedToiletId, setSelectedToiletId] = useState(null);
-
   const [focusUserRequest, setFocusUserRequest] = useState(0);
-
   const [fitFilteredToiletsRequest, setFitFilteredToiletsRequest] = useState(0);
-
   const [pendingFilterFit, setPendingFilterFit] = useState(false);
 
   async function showRoute(toilet) {
@@ -54,9 +47,7 @@ export default function App() {
 
     if (!userLocation) {
       setRouteError("Prvo dozvoli pristup svojoj lokaciji.");
-
       setIsMobileSheetOpen(true);
-
       return;
     }
 
@@ -78,11 +69,9 @@ export default function App() {
 
       setRoute(null);
       setRouteStatus("error");
-
       setRouteError(
         error instanceof Error ? error.message : "Ruta trenutno nije dostupna.",
       );
-
       setIsMobileSheetOpen(true);
     }
   }
@@ -98,7 +87,6 @@ export default function App() {
     setRouteStatus("idle");
     setSelectedToiletId(null);
     setIsMobileSheetOpen(false);
-
     setFocusUserRequest((current) => current + 1);
   }
 
@@ -107,9 +95,7 @@ export default function App() {
 
     if (!navigator.geolocation) {
       setLocationStatus("error");
-
       setLocationError("Tvoj browser ne podržava geolokaciju.");
-
       return;
     }
 
@@ -119,9 +105,7 @@ export default function App() {
       (position) => {
         setUserLocation({
           latitude: position.coords.latitude,
-
           longitude: position.coords.longitude,
-
           accuracy: position.coords.accuracy,
         });
 
@@ -130,7 +114,6 @@ export default function App() {
         setIsMobileSheetOpen(false);
         setSelectedToiletId(null);
       },
-
       (error) => {
         setLocationStatus("error");
 
@@ -153,7 +136,6 @@ export default function App() {
             setLocationError("Nismo uspeli da pronađemo tvoju lokaciju.");
         }
       },
-
       {
         enableHighAccuracy: true,
         timeout: 10000,
@@ -163,46 +145,26 @@ export default function App() {
   }
 
   function prepareFilterChange() {
-    /*
-     * Zatvaramo sheet odmah nakon klika.
-     */
     setIsMobileSheetOpen(false);
-
-    /*
-     * Zatvaramo popup i brišemo izbor pina.
-     */
     setSelectedToiletId(null);
-
-    /*
-     * Ako je ruta aktivna, uklanjamo je jer
-     * sada prikazujemo rezultate filtera.
-     */
     setRoute(null);
     setRouteError("");
     setRouteStatus("idle");
-
-    /*
-     * FitBounds se pokreće tek nakon što React
-     * izračuna novi visibleToilets niz.
-     */
     setPendingFilterFit(true);
   }
 
   function toggleOpenFilter() {
     setShowOnlyOpen((current) => !current);
-
     prepareFilterChange();
   }
 
   function toggleFreeFilter() {
     setShowOnlyFree((current) => !current);
-
     prepareFilterChange();
   }
 
   function changePlaceTypeFilter(placeType) {
     setSelectedPlaceType(placeType);
-
     prepareFilterChange();
   }
 
@@ -237,11 +199,8 @@ export default function App() {
 
   const visibleToilets = toiletsWithDistance.filter((toilet) => {
     const openingStatus = getToiletOpeningStatus(toilet);
-
     const matchesOpen = !showOnlyOpen || openingStatus.isOpen === true;
-
     const matchesFree = !showOnlyFree || toilet.fee === false;
-
     const matchesPlaceType =
       selectedPlaceType === "all" || toilet.placeType === selectedPlaceType;
 
@@ -250,7 +209,6 @@ export default function App() {
 
   const visibleOpenToilets = visibleToilets.filter((toilet) => {
     const openingStatus = getToiletOpeningStatus(toilet);
-
     return openingStatus.isOpen === true;
   });
 
@@ -259,10 +217,10 @@ export default function App() {
       ? visibleOpenToilets[0]
       : null;
 
-  /*
-   * Ovaj efekat se izvršava tek nakon rendera
-   * sa novim filterom i novim visibleToilets.
-   */
+  const nearestOpeningStatus = nearestOpenToilet
+    ? getToiletOpeningStatus(nearestOpenToilet)
+    : null;
+
   useEffect(() => {
     if (!pendingFilterFit || !userLocation) {
       return;
@@ -270,7 +228,6 @@ export default function App() {
 
     const frameId = window.requestAnimationFrame(() => {
       setFitFilteredToiletsRequest((current) => current + 1);
-
       setPendingFilterFit(false);
     });
 
@@ -296,7 +253,7 @@ export default function App() {
   }
 
   return (
-    <main className="app">
+    <main className="app app--phase-one">
       {locationError && <p className="location-error">{locationError}</p>}
 
       <section className="desktop-panels">
@@ -306,9 +263,7 @@ export default function App() {
               <span className="nearest-toilet__label">
                 Najbliži otvoreni WC
               </span>
-
               <strong>{nearestOpenToilet.name}</strong>
-
               <span>{nearestOpenToilet.address}</span>
             </div>
 
@@ -337,9 +292,7 @@ export default function App() {
           <section className="route-summary">
             <div>
               <span className="route-summary__label">Pešačka ruta</span>
-
               <strong>{route.toiletName}</strong>
-
               <span>
                 {formatRouteDistance(route.distanceMeters)}
                 {" · "}
@@ -378,40 +331,63 @@ export default function App() {
           focusUserRequest={focusUserRequest}
           fitFilteredToiletsRequest={fitFilteredToiletsRequest}
           onShowRoute={showRoute}
+          nearestToilet={nearestOpenToilet}
         />
       </section>
+
+      <div className="mobile-map-topbar" aria-label="Kontrole mape">
+        <div className="mobile-brand-pill">
+          <span className="mobile-brand-pill__mark">WC</span>
+          <span className="mobile-brand-pill__copy">
+            <strong>Gde je WC?</strong>
+            <small>Beograd</small>
+          </span>
+        </div>
+
+        <button
+          type="button"
+          className="mobile-filter-trigger"
+          onClick={() => setIsMobileSheetOpen(true)}
+          aria-label="Otvori filtere"
+        >
+          <SlidersHorizontal size={18} strokeWidth={2.2} aria-hidden="true" />
+          <span>Filteri</span>
+        </button>
+      </div>
 
       <section
         className={`mobile-sheet ${
           isMobileSheetOpen ? "mobile-sheet--open" : "mobile-sheet--collapsed"
-        }`}
+        } ${route ? "mobile-sheet--route-active" : ""}`}
       >
         <button
           type="button"
           className="mobile-sheet__toggle"
-          onClick={() => {
-            setIsMobileSheetOpen((current) => !current);
-          }}
+          onClick={() => setIsMobileSheetOpen((current) => !current)}
           aria-label={
             isMobileSheetOpen
               ? "Sklopi listu lokacija"
               : "Otvori listu lokacija"
           }
+          aria-expanded={isMobileSheetOpen}
         >
           <span className="mobile-sheet__handle" />
+          <span className="sr-only">
+            {isMobileSheetOpen ? "Sklopi" : "Proširi"}
+          </span>
         </button>
 
         {!isMobileSheetOpen && (
-          <>
+          <div className="mobile-sheet__compact-shell">
             {route ? (
-              <div className="mobile-sheet__compact mobile-sheet__compact--route">
-                <div className="mobile-sheet__compact-info">
-                  <span className="mobile-sheet__eyebrow">
-                    Aktivna pešačka ruta
-                  </span>
+              <article className="mobile-route-card">
+                <div className="mobile-route-card__icon" aria-hidden="true">
+                  <Navigation size={18} strokeWidth={2.4} />
+                </div>
 
+                <div className="mobile-route-card__content">
+                  <span className="mobile-sheet__eyebrow">Aktivna ruta</span>
                   <strong>{route.toiletName}</strong>
-
                   <span className="mobile-sheet__meta">
                     {formatRouteDistance(route.distanceMeters)}
                     {" · "}
@@ -421,35 +397,35 @@ export default function App() {
 
                 <button
                   type="button"
-                  className="mobile-sheet__stop-route-button"
+                  className="mobile-route-card__stop"
                   onClick={clearRoute}
+                  aria-label="Prekini rutu"
                 >
-                  Prekini rutu
+                  <X size={18} strokeWidth={2.3} aria-hidden="true" />
+                  <span>Prekini</span>
                 </button>
-              </div>
+              </article>
             ) : nearestOpenToilet ? (
-              <div className="mobile-sheet__compact">
+              <article className="mobile-nearest-bar">
                 <button
                   type="button"
-                  className="mobile-sheet__compact-info"
-                  onClick={() => {
-                    selectToilet(nearestOpenToilet);
-                  }}
+                  className="mobile-nearest-bar__info"
+                  onClick={() => selectToilet(nearestOpenToilet)}
                 >
-                  <span className="mobile-sheet__eyebrow">
-                    Najbliži otvoreni WC
+                  <span className="mobile-nearest-bar__label">
+                    <span className="mobile-nearest-bar__dot" />
+                    Najbliži otvoreni
                   </span>
 
                   <strong>{nearestOpenToilet.name}</strong>
 
-                  <span className="mobile-sheet__meta">
-                    {nearestOpenToilet.address}
+                  <span className="mobile-nearest-bar__meta">
+                    {formatDistance(nearestOpenToilet.distanceKm)}
 
-                    {nearestOpenToilet.distanceKm != null && (
+                    {nearestOpeningStatus?.label && (
                       <>
-                        {" · "}
-
-                        {formatDistance(nearestOpenToilet.distanceKm)}
+                        <span aria-hidden="true"> · </span>
+                        {nearestOpeningStatus.label}
                       </>
                     )}
                   </span>
@@ -457,27 +433,29 @@ export default function App() {
 
                 <button
                   type="button"
-                  className="mobile-sheet__route-button"
-                  onClick={(event) => {
-                    event.stopPropagation();
-
-                    showRoute(nearestOpenToilet);
-                  }}
+                  className="mobile-nearest-bar__route"
+                  onClick={() => showRoute(nearestOpenToilet)}
                   disabled={routeStatus === "loading"}
                 >
-                  {routeStatus === "loading" ? "Učitavam..." : "Ruta"}
-                </button>
-              </div>
-            ) : (
-              <div className="mobile-sheet__compact">
-                <div className="mobile-sheet__compact-info">
-                  <span className="mobile-sheet__eyebrow">Nema rezultata</span>
+                  <Navigation size={17} strokeWidth={2.3} aria-hidden="true" />
 
+                  <span>
+                    {routeStatus === "loading" ? "Učitavam..." : "Ruta"}
+                  </span>
+                </button>
+              </article>
+            ) : (
+              <article className="mobile-empty-card">
+                <span className="mobile-empty-card__icon" aria-hidden="true">
+                  <MapPin size={20} strokeWidth={2.2} />
+                </span>
+                <div>
+                  <span className="mobile-sheet__eyebrow">Nema rezultata</span>
                   <strong>Nema toaleta za izabrane filtere</strong>
                 </div>
-              </div>
+              </article>
             )}
-          </>
+          </div>
         )}
 
         {isMobileSheetOpen && (
@@ -485,14 +463,40 @@ export default function App() {
             <header className="mobile-sheet__header">
               <div>
                 <span className="mobile-sheet__eyebrow">Lokacije</span>
-
                 <h2>Toaleti u blizini</h2>
+                <p>{visibleToilets.length} rezultata na mapi</p>
               </div>
 
-              <span className="mobile-sheet__count">
-                {visibleToilets.length}
-              </span>
+              <button
+                type="button"
+                className="mobile-sheet__collapse-button"
+                onClick={() => setIsMobileSheetOpen(false)}
+                aria-label="Sklopi listu"
+              >
+                <ChevronDown size={20} strokeWidth={2.2} aria-hidden="true" />
+              </button>
             </header>
+
+            {routeError && <p className="route-error">{routeError}</p>}
+
+            {route && (
+              <section className="mobile-expanded-route">
+                <div className="mobile-expanded-route__icon" aria-hidden="true">
+                  <Navigation size={18} strokeWidth={2.3} />
+                </div>
+                <div>
+                  <span>Aktivna pešačka ruta</span>
+                  <strong>{route.toiletName}</strong>
+                  <small>
+                    {formatRouteDistance(route.distanceMeters)} · oko{" "}
+                    {formatRouteDuration(route.durationSeconds)}
+                  </small>
+                </div>
+                <button type="button" onClick={clearRoute}>
+                  Prekini
+                </button>
+              </section>
+            )}
 
             <div className="mobile-filters-wrapper">
               <Filters

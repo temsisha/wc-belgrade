@@ -1,32 +1,51 @@
+import {
+  BusFront,
+  CircleDollarSign,
+  Clock3,
+  Dumbbell,
+  Fuel,
+  LayoutGrid,
+  MapPin,
+  ShoppingBag,
+  TrainFront,
+} from "lucide-react";
+
 const PLACE_TYPE_OPTIONS = [
   {
     value: "all",
-    label: "Sve"
+    label: "Sve",
+    Icon: LayoutGrid,
   },
   {
     value: "public_toilet",
-    label: "Javni toaleti"
+    label: "Javni toaleti",
+    Icon: MapPin,
   },
   {
     value: "shopping_mall",
-    label: "Tržni centri"
+    label: "Tržni centri",
+    Icon: ShoppingBag,
   },
   {
     value: "gas_station",
-    label: "Pumpe"
+    label: "Pumpe",
+    Icon: Fuel,
   },
   {
-  value: "bus_station",
-  label: "Autobuske stanice"
-},
-{
-  value: "train_station",
-  label: "Železničke stanice"
-},
-{
-  value: "sports_center",
-  label: "Sportski centri"
-}
+    value: "bus_station",
+    label: "Autobuske stanice",
+    Icon: BusFront,
+  },
+  {
+    value: "train_station",
+    label: "Železničke stanice",
+    Icon: TrainFront,
+  },
+  {
+    value: "sports_center",
+    label: "Sportski centri",
+    Icon: Dumbbell,
+  },
 ];
 
 export default function Filters({
@@ -37,11 +56,38 @@ export default function Filters({
   totalCount,
   onToggleOpen,
   onToggleFree,
-  onChangePlaceType
+  onChangePlaceType,
 }) {
   return (
     <section className="filters filters--advanced">
-      <div className="filter-actions">
+      <div
+        className="filter-categories"
+        role="group"
+        aria-label="Vrsta lokacije"
+      >
+        {PLACE_TYPE_OPTIONS.map(({ value, label, Icon }) => {
+          const isActive = selectedPlaceType === value;
+
+          return (
+            <button
+              key={value}
+              type="button"
+              className={
+                isActive
+                  ? "category-filter category-filter--active"
+                  : "category-filter"
+              }
+              onClick={() => onChangePlaceType(value)}
+              aria-pressed={isActive}
+            >
+              <Icon size={16} strokeWidth={2} aria-hidden="true" />
+              <span>{label}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="filter-actions" aria-label="Dodatni filteri">
         <button
           type="button"
           className={
@@ -50,8 +96,10 @@ export default function Filters({
               : "filter-button"
           }
           onClick={onToggleOpen}
+          aria-pressed={showOnlyOpen}
         >
-          Samo otvoreni
+          <Clock3 size={16} strokeWidth={2.1} aria-hidden="true" />
+          <span>Otvoreni</span>
         </button>
 
         <button
@@ -62,34 +110,16 @@ export default function Filters({
               : "filter-button"
           }
           onClick={onToggleFree}
+          aria-pressed={showOnlyFree}
         >
-          Besplatno
+          <CircleDollarSign size={16} strokeWidth={2.1} aria-hidden="true" />
+          <span>Besplatno</span>
         </button>
       </div>
 
-      <div
-        className="filter-categories"
-        role="group"
-        aria-label="Vrsta lokacije"
-      >
-        {PLACE_TYPE_OPTIONS.map((option) => (
-          <button
-            key={option.value}
-            type="button"
-            className={
-              selectedPlaceType === option.value
-                ? "category-filter category-filter--active"
-                : "category-filter"
-            }
-            onClick={() => onChangePlaceType(option.value)}
-          >
-            {option.label}
-          </button>
-        ))}
-      </div>
-
       <span className="results-count">
-        Prikazano: {visibleCount} od {totalCount}
+        <strong>{visibleCount}</strong>
+        <span> od {totalCount}</span>
       </span>
     </section>
   );

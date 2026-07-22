@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-
 import {
   MapContainer,
   Marker,
@@ -8,19 +7,13 @@ import {
   TileLayer,
   useMap,
 } from "react-leaflet";
-
 import L from "leaflet";
-
 import MarkerClusterGroup from "react-leaflet-cluster";
-
-import { LocateFixed } from "lucide-react";
+import { Flag, LocateFixed, MapPin, Navigation } from "lucide-react";
 
 import { getToiletOpeningStatus } from "../utils/openingHours";
-
 import { formatDistance } from "../utils/distance";
-
 import { getFeeLabel, getPlaceTypeLabel } from "../utils/toiletLabels";
-
 import {
   createToiletMapIcon,
   createUserLocationMapIcon,
@@ -56,22 +49,9 @@ function UserLocationFocus({ userLocation, focusUserRequest }) {
 
     const timeoutId = window.setTimeout(() => {
       map.closePopup();
-
-      map.invalidateSize({
-        pan: false,
-      });
-
-      map.setView(coordinates, 16, {
-        animate: false,
-      });
-
-      /*
-       * Pin pomeramo malo iznad
-       * sklopljenog sheeta.
-       */
-      map.panBy([0, 75], {
-        animate: false,
-      });
+      map.invalidateSize({ pan: false });
+      map.setView(coordinates, 16, { animate: false });
+      map.panBy([0, 82], { animate: false });
     }, 150);
 
     return () => {
@@ -98,10 +78,18 @@ function RouteFocus({ route }) {
         pan: false,
       });
 
-      map.fitBounds(route.positions, {
-        paddingTopLeft: [40, 60],
+      const isMobile = map.getContainer().clientWidth <= 640;
 
-        paddingBottomRight: [40, 130],
+      map.fitBounds(route.positions, {
+        /*
+         * Na mobilnom ostavljamo slobodan prostor:
+         * levo za + / − kontrole
+         * gore za logo i filtere
+         * dole za route bar
+         */
+        paddingTopLeft: isMobile ? [92, 180] : [48, 96],
+
+        paddingBottomRight: isMobile ? [42, 125] : [48, 160],
 
         animate: true,
         duration: 0.8,
@@ -120,10 +108,6 @@ function SelectedToiletFocus({ selectedToilet, markerRefs, route }) {
   const map = useMap();
 
   useEffect(() => {
-    /*
-     * Kada postoji ruta,
-     * RouteFocus upravlja mapom.
-     */
     if (!selectedToilet || route?.positions?.length) {
       return;
     }
@@ -137,9 +121,7 @@ function SelectedToiletFocus({ selectedToilet, markerRefs, route }) {
     });
 
     const timeoutId = window.setTimeout(() => {
-      const marker = markerRefs?.current?.[selectedToilet.id];
-
-      marker?.openPopup();
+      markerRefs?.current?.[selectedToilet.id]?.openPopup();
     }, 850);
 
     return () => {
@@ -165,7 +147,6 @@ function PopupCenterController({ disabled = false }) {
       firstFrameId = window.requestAnimationFrame(() => {
         secondFrameId = window.requestAnimationFrame(() => {
           const popupElement = event.popup.getElement();
-
           const mapElement = map.getContainer();
 
           if (!popupElement || !mapElement) {
@@ -173,24 +154,15 @@ function PopupCenterController({ disabled = false }) {
           }
 
           const popupRect = popupElement.getBoundingClientRect();
-
           const mapRect = mapElement.getBoundingClientRect();
-
           const popupCenterX =
             popupRect.left - mapRect.left + popupRect.width / 2;
-
           const popupCenterY =
             popupRect.top - mapRect.top + popupRect.height / 2;
-
           const mapCenterX = mapRect.width / 2;
-
           const mapCenterY = mapRect.height / 2;
 
-          const offsetX = popupCenterX - mapCenterX;
-
-          const offsetY = popupCenterY - mapCenterY;
-
-          map.panBy([offsetX, offsetY], {
+          map.panBy([popupCenterX - mapCenterX, popupCenterY - mapCenterY], {
             animate: true,
             duration: 0.45,
           });
@@ -218,7 +190,6 @@ function PopupCenterController({ disabled = false }) {
 
 function createClusterIcon(cluster) {
   const count = cluster.getChildCount();
-
   let sizeClass = "toilet-cluster--small";
 
   if (count >= 10) {
@@ -232,28 +203,34 @@ function createClusterIcon(cluster) {
   return L.divIcon({
     html: `
       <div class="toilet-cluster ${sizeClass}">
-        <span class="toilet-cluster__count">
-          ${count}
-        </span>
+        <span class="toilet-cluster__ring"></span>
+        <span class="toilet-cluster__count">${count}</span>
       </div>
     `,
-
     className: "toilet-cluster-wrapper",
-
-    iconSize: [50, 50],
-    iconAnchor: [25, 25],
+    iconSize: [52, 52],
+    iconAnchor: [26, 26],
   });
 }
 
+const nearestToiletPulseIcon = L.divIcon({
+  className: "nearest-toilet-pulse-wrapper",
+
+  html: `
+    <span class="nearest-toilet-pulse">
+      <span class="nearest-toilet-pulse__ring"></span>
+      <span class="nearest-toilet-pulse__ring nearest-toilet-pulse__ring--delayed"></span>
+    </span>
+  `,
+
+  iconSize: [75, 75],
+  iconAnchor: [50, 58],
+});
+
 function FilteredToiletsFocus({ toilets, fitRequest, userLocation }) {
   const map = useMap();
-
   const toiletsRef = useRef(toilets);
 
-  /*
-   * Uvek čuvamo najnoviji filtrirani niz,
-   * ali fit ne pokrećemo samo zbog promene niza.
-   */
   useEffect(() => {
     toiletsRef.current = toilets;
   }, [toilets]);
@@ -266,10 +243,6 @@ function FilteredToiletsFocus({ toilets, fitRequest, userLocation }) {
     map.stop();
     map.closePopup();
 
-    /*
-     * Sheet ima tranziciju, a cluster komponenta
-     * mora prvo ponovo da napravi svoje markere.
-     */
     const timeoutId = window.setTimeout(() => {
       const positions = toiletsRef.current
         .map((toilet) => [Number(toilet.latitude), Number(toilet.longitude)])
@@ -278,9 +251,7 @@ function FilteredToiletsFocus({ toilets, fitRequest, userLocation }) {
             Number.isFinite(latitude) && Number.isFinite(longitude),
         );
 
-      map.invalidateSize({
-        pan: false,
-      });
+      map.invalidateSize({ pan: false });
 
       if (positions.length === 0) {
         if (userLocation) {
@@ -298,21 +269,12 @@ function FilteredToiletsFocus({ toilets, fitRequest, userLocation }) {
           animate: true,
           duration: 0.8,
         });
-
         return;
       }
 
-      const bounds = L.latLngBounds(positions);
-
-      /*
-       * maxZoom 14 garantuje da se više
-       * lokacija i dalje vide grupisano.
-       */
-      map.fitBounds(bounds, {
-        paddingTopLeft: [45, 45],
-
-        paddingBottomRight: [45, 175],
-
+      map.fitBounds(L.latLngBounds(positions), {
+        paddingTopLeft: [48, 100],
+        paddingBottomRight: [48, 210],
         maxZoom: 14,
         animate: true,
         duration: 0.8,
@@ -329,19 +291,20 @@ function FilteredToiletsFocus({ toilets, fitRequest, userLocation }) {
 
 function getOpeningStatusClass(isOpen) {
   if (isOpen === true) {
-    return "opening-status " + "opening-status--open";
+    return "map-popup__status map-popup__status--open";
   }
 
   if (isOpen === false) {
-    return "opening-status " + "opening-status--closed";
+    return "map-popup__status map-popup__status--closed";
   }
 
-  return "opening-status " + "opening-status--unknown";
+  return "map-popup__status map-popup__status--unknown";
 }
 
 export default function ToiletMap({
   toilets,
   userLocation,
+  nearestToilet,
   route,
   selectedToiletId,
   focusUserRequest,
@@ -349,7 +312,6 @@ export default function ToiletMap({
   onShowRoute,
 }) {
   const markerRefs = useRef({});
-
   const mapRef = useRef(null);
 
   const selectedToilet = toilets.find(
@@ -358,7 +320,6 @@ export default function ToiletMap({
 
   function handleShowRoute(toilet) {
     markerRefs.current[toilet.id]?.closePopup();
-
     onShowRoute(toilet);
   }
 
@@ -374,11 +335,7 @@ export default function ToiletMap({
 
     map.stop();
     map.closePopup();
-
-    map.invalidateSize({
-      pan: false,
-    });
-
+    map.invalidateSize({ pan: false });
     map.flyTo([userLocation.latitude, userLocation.longitude], 16, {
       animate: true,
       duration: 0.8,
@@ -390,14 +347,11 @@ export default function ToiletMap({
       <MapContainer
         center={[userLocation.latitude, userLocation.longitude]}
         zoom={16}
-        style={{
-          height: "100%",
-          width: "100%",
-        }}
+        style={{ height: "100%", width: "100%" }}
       >
         <TileLayer
-          attribution={"&copy; OpenStreetMap contributors &copy; CARTO"}
-          url={"https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"}
+          attribution="&copy; OpenStreetMap contributors &copy; CARTO"
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
           subdomains="abcd"
           maxZoom={20}
         />
@@ -426,14 +380,29 @@ export default function ToiletMap({
         <PopupCenterController disabled={Boolean(route?.positions?.length)} />
 
         {route?.positions?.length > 0 && (
-          <Polyline
-            positions={route.positions}
-            pathOptions={{
-              color: "#2563eb",
-              weight: 6,
-              opacity: 0.85,
-            }}
-          />
+          <>
+            <Polyline
+              positions={route.positions}
+              pathOptions={{
+                color: "rgba(255, 255, 255, 0.96)",
+                weight: 9,
+                opacity: 0.95,
+                lineCap: "round",
+                lineJoin: "round",
+              }}
+            />
+            <Polyline
+              positions={route.positions}
+              pathOptions={{
+                color: "#0b8f83",
+                weight: 5,
+                opacity: 1,
+                dashArray: "2 10",
+                lineCap: "round",
+                lineJoin: "round",
+              }}
+            />
+          </>
         )}
 
         {userLocation && (
@@ -445,11 +414,21 @@ export default function ToiletMap({
             <Popup autoPan={false}>
               <div className="user-location-popup">
                 <strong>Tvoja lokacija</strong>
-
                 <span>Odavde računamo udaljenost i rutu.</span>
               </div>
             </Popup>
           </Marker>
+        )}
+
+        {nearestToilet && !route?.positions?.length && (
+          <Marker
+            key={`nearest-toilet-pulse-${nearestToilet.id}`}
+            position={[nearestToilet.latitude, nearestToilet.longitude]}
+            icon={nearestToiletPulseIcon}
+            interactive={false}
+            keyboard={false}
+            zIndexOffset={-1000}
+          />
         )}
 
         <MarkerClusterGroup
@@ -464,15 +443,11 @@ export default function ToiletMap({
         >
           {toilets.map((toilet) => {
             const openingStatus = getToiletOpeningStatus(toilet);
-
             const isSelected =
               selectedToiletId === toilet.id || route?.toiletId === toilet.id;
-
             const markerIcon = createToiletMapIcon({
               placeType: toilet.placeType,
-
               isOpen: openingStatus.isOpen,
-
               isSelected,
             });
 
@@ -491,52 +466,64 @@ export default function ToiletMap({
                 position={[toilet.latitude, toilet.longitude]}
               >
                 <Popup autoPan={false}>
-                  <strong>{toilet.name}</strong>
+                  <article className="map-popup">
+                    <div className="map-popup__topline">
+                      <span className="map-popup__type">
+                        {getPlaceTypeLabel(toilet.placeType)}
+                      </span>
+                      <span
+                        className={getOpeningStatusClass(openingStatus.isOpen)}
+                      >
+                        {openingStatus.label}
+                      </span>
+                    </div>
 
-                  <p>{toilet.address}</p>
+                    <h3>{toilet.name}</h3>
 
-                  <p className="toilet-place-type">
-                    {getPlaceTypeLabel(toilet.placeType)}
-                  </p>
-
-                  <p>{getFeeLabel(toilet.fee)}</p>
-
-                  {toilet.locationDescription && (
-                    <p className="toilet-location-description">
-                      {toilet.locationDescription}
+                    <p className="map-popup__address">
+                      <MapPin size={14} strokeWidth={2} aria-hidden="true" />
+                      <span>{toilet.address}</span>
                     </p>
-                  )}
 
-                  {toilet.distanceKm != null && (
-                    <p>
-                      Udaljenost:{" "}
-                      <strong>{formatDistance(toilet.distanceKm)}</strong>
-                    </p>
-                  )}
+                    <div className="map-popup__facts">
+                      <span>{getFeeLabel(toilet.fee)}</span>
+                      {toilet.distanceKm != null && (
+                        <span>{formatDistance(toilet.distanceKm)}</span>
+                      )}
+                    </div>
 
-                  <p className={getOpeningStatusClass(openingStatus.isOpen)}>
-                    {openingStatus.label}
-                  </p>
+                    {toilet.locationDescription && (
+                      <p className="map-popup__description">
+                        {toilet.locationDescription}
+                      </p>
+                    )}
 
-                  <div className="popup-actions">
-                    <button
-                      type="button"
-                      className="popup-route-button"
-                      onClick={() => handleShowRoute(toilet)}
-                    >
-                      Prikaži pešačku rutu
-                    </button>
+                    <div className="map-popup__actions">
+                      <button
+                        type="button"
+                        className="map-popup__route"
+                        onClick={() => handleShowRoute(toilet)}
+                      >
+                        <Navigation
+                          size={16}
+                          strokeWidth={2.3}
+                          aria-hidden="true"
+                        />
+                        <span>Prikaži rutu</span>
+                      </button>
 
-                    <button
-                      type="button"
-                      className="popup-report-button"
-                      onClick={() => {
-                        console.log("Prijavi problem", toilet.id);
-                      }}
-                    >
-                      Prijavi problem
-                    </button>
-                  </div>
+                      <button
+                        type="button"
+                        className="map-popup__report"
+                        onClick={() => {
+                          console.log("Prijavi problem", toilet.id);
+                        }}
+                      >
+                        <Flag size={15} strokeWidth={2.1} aria-hidden="true" />
+                        <span>Prijavi problem</span>
+                      </button>
+                    </div>
+                  </article>
                 </Popup>
               </Marker>
             );
