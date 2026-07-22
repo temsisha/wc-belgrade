@@ -4534,3 +4534,55 @@ a:focus-visible {
     opacity: 0.65;
   }
 }
+
+@media (max-width: 640px) {
+  /*
+   * Prvi red:
+   * logo i filteri
+   */
+  .mobile-map-topbar {
+    top:
+      max(
+        14px,
+        calc(env(safe-area-inset-top) + 10px)
+      );
+  }
+
+  /*
+   * Drugi red:
+   * zoom kontrole levo
+   */
+  .app--phase-one .leaflet-control-zoom {
+    margin-top:
+      calc(
+        env(safe-area-inset-top) + 92px
+      ) !important;
+
+    margin-left: 14px !important;
+  }
+
+  /*
+   * Drugi red:
+   * moja lokacija desno
+   */
+  .app--phase-one .map-location-button {
+    top:
+      calc(
+        env(safe-area-inset-top) + 92px
+      );
+
+    right: 14px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 640px) {
+    .app--phase-one .leaflet-control-zoom {
+      margin-top: 108px !important;
+    }
+
+    .app--phase-one .map-location-button {
+      top: 108px;
+    }
+  }
+}
