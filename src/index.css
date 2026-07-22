@@ -4752,3 +4752,31 @@ a:focus-visible {
     cursor: pointer;
   }
 }
+
+@media (max-width: 640px) {
+  .mobile-map-controls__location {
+    position: fixed;
+    z-index: 1600;
+
+    top: calc(env(safe-area-inset-top) + 82px);
+    left: 14px;
+    right: auto;
+
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    padding: 0;
+
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow:
+      0 12px 28px rgba(15, 42, 45, 0.16);
+
+    color: #1769e8;
+    cursor: pointer;
+  }
+}
