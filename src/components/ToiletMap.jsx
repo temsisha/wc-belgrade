@@ -365,6 +365,7 @@ export default function ToiletMap({
   return (
     <div className="toilet-map-wrapper">
       <MapContainer
+        key="wc-map-with-custom-controls"
         center={[userLocation.latitude, userLocation.longitude]}
         zoom={16}
         zoomControl={false}
@@ -555,40 +556,18 @@ export default function ToiletMap({
         </MarkerClusterGroup>
       </MapContainer>
 
-      <div className="mobile-map-controls">
-        <div className="mobile-map-controls__zoom">
-          <button
-            type="button"
-            onClick={zoomInMap}
-            aria-label="Uvećaj mapu"
-            title="Uvećaj mapu"
-          >
-            +
-          </button>
-
-          <button
-            type="button"
-            onClick={zoomOutMap}
-            aria-label="Umanji mapu"
-            title="Umanji mapu"
-          >
-            −
-          </button>
-        </div>
-
-        {!route?.positions?.length && (
-          <button
-            type="button"
-            className="mobile-map-controls__location"
-            onClick={focusUserLocation}
-            disabled={!userLocation}
-            aria-label="Prikaži moju lokaciju"
-            title="Prikaži moju lokaciju"
-          >
-            <LocateFixed size={21} strokeWidth={2.4} aria-hidden="true" />
-          </button>
-        )}
-      </div>
+      {!route?.positions?.length && (
+        <button
+          type="button"
+          className="mobile-map-controls__location"
+          onClick={focusUserLocation}
+          disabled={!userLocation}
+          aria-label="Prikaži moju lokaciju"
+          title="Prikaži moju lokaciju"
+        >
+          <LocateFixed size={21} strokeWidth={2.4} aria-hidden="true" />
+        </button>
+      )}
     </div>
   );
 }

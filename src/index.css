@@ -4717,3 +4717,38 @@ a:focus-visible {
     display: none !important;
   }
 }
+
+@media (max-width: 640px) {
+  .mobile-map-controls,
+  .mobile-map-controls__zoom {
+    display: none !important;
+  }
+
+  .app--phase-one .leaflet-control-zoom {
+    display: none !important;
+  }
+
+  .mobile-map-controls__location {
+    position: absolute;
+    z-index: 1450;
+
+    top: calc(env(safe-area-inset-top) + 82px);
+    right: 14px;
+
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    padding: 0;
+
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 12px 28px rgba(15, 42, 45, 0.16);
+
+    color: #1769e8;
+    cursor: pointer;
+  }
+}
